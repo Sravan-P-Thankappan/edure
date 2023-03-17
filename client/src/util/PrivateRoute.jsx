@@ -6,9 +6,9 @@ import { UserContext } from './AuthContext'
  
 const PrivateRoute = () => {
     const {loggedIn} = useContext(UserContext)
-
+    const id = localStorage.getItem('userId')
   return (
-     loggedIn?<Outlet/>:<Navigate to={'/'} />
+    id?<Outlet/>:<Navigate to={'/'} />
   )
 }
 
